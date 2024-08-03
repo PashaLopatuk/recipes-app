@@ -33,7 +33,7 @@ const RecipeCard: FC<PropsType> = (
 
   return (
     <>
-      <Card className={'p-2 space-y-2 rounded-xl'}>
+      <Card className={'p-2 space-y-2 rounded-2xl'}>
         <div className={'absolute w-0 h-0'}>
           {isMostPopular && (
             <Badge
