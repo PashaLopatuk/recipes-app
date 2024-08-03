@@ -14,10 +14,13 @@ const RecipeFilters: FC<PropsType> = ({}) => {
   const {refresh} = useRouter()
   const {data: tags, isLoading} = useRecipeTags()
 
-  const [selectedTag, setSelectedTag] = useQueryState('tag')
+  const [selectedTag, setSelectedTag] = useQueryState('tag', {
+    history: 'replace',
+    shallow: false,
+  })
 
   const onValueChange = (value: string | undefined) => {
-    setSelectedTag(value ?? null).then(() => refresh())
+    setSelectedTag(value ?? null).then()
   }
 
   return (
@@ -31,7 +34,7 @@ const RecipeFilters: FC<PropsType> = ({}) => {
               key={tag}
             />
           )) : (
-            [new Array(20).keys()].map(idx => (
+            [...new Array(20)].map((_, idx) => (
               <FilterItemFallback key={idx}/>
             ))
           )

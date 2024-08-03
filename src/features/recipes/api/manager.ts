@@ -1,21 +1,27 @@
-import {tag} from "postcss-selector-parser";
 import {RecipeService} from "@/api/services";
+
+export const limit = 10
 
 export class RecipesManager {
   static getRecipes(params?: {
     tag?: string,
-    limit?: number,
-    skip?: number,
-    sortBy?: string,
-    order?: 'desc' | 'asc',
+    page?: number
   }) {
+    const skip = params?.page ? (limit * (params?.page-1)) : (0)
     if (params?.tag) {
       return (
-        RecipeService.getRecipesByTag(params as any)
+        RecipeService.getRecipesByTag({
+          tag: params.tag,
+          skip: skip,
+          limit: limit
+        })
       )
     }
     return (
-      RecipeService.getRecipes(params)
+      RecipeService.getRecipes({
+        skip: skip,
+        limit: limit
+      })
     )
   }
 
