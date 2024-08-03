@@ -19,7 +19,7 @@ type PropsType = {
   pageCount: number
 }
 
-const PAGE_MAX_NUMBER = 4
+const PAGE_MAX_NUMBER = 3
 
 
 const Index: FC<PropsType> = (

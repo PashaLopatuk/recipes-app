@@ -4,6 +4,8 @@ import {
 import {FC, PropsWithChildren, useState} from "react";
 import {Button} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
+import ArrowIcon from "@/shared/assets/arrow";
+import exp from "node:constants";
 
 type PropsType = {
   value: string | undefined | null,
@@ -33,7 +35,13 @@ const FilterGroup: FC<PropsWithChildren<PropsType>> = ({value, onValueChange, ch
       <Button
         onClick={onClick}
         className={'self-start'}
-      >expand</Button>
+      >
+        <ArrowIcon className={cn(
+          'transform-gpu',
+          expanded ? '-rotate-90' : 'rotate-90',
+          'transition duration-200'
+        )}/>
+      </Button>
     </div>
   )
 }
