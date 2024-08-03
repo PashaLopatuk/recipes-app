@@ -9,12 +9,12 @@ type PropsType = {}
 const Header: FC<PropsType> = ({}) => {
 
   return (
-    <header className={'p-2 sticky'}>
+    <header className={'px-2 py-4 sticky'}>
       <Link
         className={''}
         href={'/recipes'}
       >
-        <h1 className={'font-semibold text-2xl text-center'}>
+        <h1 className={'font-semibold text-3xl text-center'}>
           Recipes
         </h1>
       </Link>

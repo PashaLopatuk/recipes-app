@@ -8,12 +8,12 @@ type LayoutProps = Readonly<{
 
 const Layout: FC<LayoutProps> = ({children}) => {
   return (
-    <>
+    <div className={'max-w-[1440px] mx-auto'}>
       <Header/>
       <Providers>
         <main>{children}</main>
       </Providers>
-    </>
+    </div>
   )
 }
 

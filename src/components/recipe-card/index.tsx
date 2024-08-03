@@ -34,7 +34,7 @@ const RecipeCard: FC<PropsType> = (
   return (
     <>
       <Card className={'p-2 space-y-2 rounded-xl'}>
-        <div className={'absolute w-0 h-3'}>
+        <div className={'absolute w-0 h-0'}>
           {isMostPopular && (
             <Badge
               variant={'destructive'}
@@ -42,7 +42,7 @@ const RecipeCard: FC<PropsType> = (
             >Most popular</Badge>
           )}
         </div>
-        <div className={'overflow-hidden w-full max-h-[300px] rounded-xl duration-200 transition-all'}>
+        <div className={'!m-0 overflow-hidden w-full max-h-[300px] rounded-xl duration-200 transition-all'}>
           <Image
             src={imageUrl}
             alt={title}
