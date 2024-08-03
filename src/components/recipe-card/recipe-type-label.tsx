@@ -7,6 +7,14 @@ const recipeTypes = {
   'Medium': 'yellow',
 }
 
+function getColor(difficulty: string) {
+  try {
+    return (recipeTypes as any)[difficulty]
+  } catch {
+    return undefined
+  }
+}
+
 type PropsType = {
   recipeType: string,
 }
@@ -16,7 +24,7 @@ const RecipeTypeLabel: FC<PropsType> = ({recipeType}) => {
   return (
     <span
       style={{
-        color: recipeTypes[recipeType] ?? undefined
+        color: getColor(recipeType) ?? undefined
       }}
     >
       {recipeType}

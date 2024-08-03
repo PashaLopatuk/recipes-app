@@ -1,4 +1,4 @@
-import {} from 'react'
+import {Suspense} from 'react'
 
 import type {FC, PropsWithChildren} from 'react'
 import RecipeFilters from "@/features/recipes/components/recipe-filters";
@@ -10,7 +10,9 @@ const BulkRecipesLayout: FC<PropsWithChildren<PropsType>> = ({children}) => {
 
   return (
     <>
-      <RecipeFilters/>
+      <Suspense>
+        <RecipeFilters/>
+      </Suspense>
       {children}
     </>
   )
