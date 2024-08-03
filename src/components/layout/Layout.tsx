@@ -1,4 +1,6 @@
 import type {FC, ReactNode} from 'react';
+import Header from "@/components/layout/Header";
+import Providers from "@/shared/providers";
 
 type LayoutProps = Readonly<{
   children: ReactNode
@@ -7,9 +9,10 @@ type LayoutProps = Readonly<{
 const Layout: FC<LayoutProps> = ({children}) => {
   return (
     <>
-      <Layout>
+      <Header/>
+      <Providers>
         <main>{children}</main>
-      </Layout>
+      </Providers>
     </>
   )
 }
