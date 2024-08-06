@@ -27,6 +27,7 @@ const BulkRecipesPage: FC<PropsType> = async({searchParams}) => {
   return (
     <Suspense key={key} fallback={<RecipesSkeleton />}>
       <RecipeList
+        key={key}
         recipes={recipes.data.recipes}
       />
       <div className={'py-5'}>
